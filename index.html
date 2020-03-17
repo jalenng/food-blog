@@ -4,9 +4,26 @@
         <title>My Food Blog</title>
         <meta content="width=device-width, initial-scale=0.8" name="viewport">
         <link rel="stylesheet" type="text/css" href="styles.css">
-        <link rel="icon" href="https://avatars2.githubusercontent.com/u/42555186?s=460&v=4">
+        <link rel="icon" href="site-icon.png">
     </head>
     <body>
+        <script>
+            function returnTastyImages(query, num) {
+                var url = "https://www.googleapis.com/customsearch/v1?key=AIzaSyCe2Z3dW__rPKLlLmPpJCXN8pHs6rXlLAM&cx=016193972885709599562:afapbnzvfix&searchType=image&q=" + query + "&num=" + num;
+                var request = new XMLHttpRequest();
+                request.open("GET", url, false);
+                request.send();
+                var response = request.response;
+                var data = JSON.parse(response);
+                console.log(data);
+                for (var i = 0; i < data["items"].length; i++) {
+                    var imageCode = 
+                        "<div class=\"grid-item\"><img class=\"food-image\" src=\"" + data["items"][i]["link"] + "\"></div>";
+                    document.write(imageCode);
+                }
+            }
+        </script>
+
         <div id="popup">
             <div class="container">
                 <h3>Cookie Monster, are you hungry?</h3>
@@ -38,6 +55,11 @@
                         <p>Where do I even begin? It's like in a flat, round shape, and it had this outer rim that was slightly elevated. I'm guessing it's to prevent the contents of the pizza from falling off. And before the pizza was served to me, it was sliced into triangles! Yes, triangles! How is that even possible, turning a circle into triangles?</p>
                         <p>I'll be pondering about the crazy phenomena of pizzas for the next few weeks... and eating them. <em>Nom</em>.</p>
                     </div>
+                    <div class="grid-container">
+                        <script>
+                            returnTastyImages("Pepperoni Pizza", "8");
+                        </script>
+                    </div>
                 </div>
             </div>
             <div class="post-container">
@@ -53,31 +75,11 @@
                         <p>I begin where? A flat, round shape is what it's in like, and this slightly elevated outer rim is what it had. I'm guessing it's to prevent the falling off of the pizza's contents. Before to me the pizza was served, also, triangles was what it was sliced into! Triangles, yes! Possible, how, into triangles by turning from a circle?</p>
                         <p></p> The pizza will be eaten and its crazy phenomena, for the few weeks next, will be pondered. <em>Chomp</em>.</p>
                     </div>
-                </div>
-            </div>
-            <div class="post-container">
-                <div class="post">
-                    <p>
+                    <div class="grid-container">
                         <script>
-                            var url = "https://www.googleapis.com/customsearch/v1?key=AIzaSyCe2Z3dW__rPKLlLmPpJCXN8pHs6rXlLAM&cx=016193972885709599562:afapbnzvfix&q=Alvin";
-                            var request = new XMLHttpRequest();
-                            request.open("GET", url, false);
-                            request.send();
-                            var response = request.response;
-                            var data = JSON.parse(response);
-                            document.write(data);
-
-                            // var part1 = "We're in here ";
-                            // var part2 = "for JavaScript for ";
-                            // var part3 = " years. ";
-                            // var counter = 0
-                            // document.write(part1 + part2 + counter + part3);
-                            // for (i = 0; i < 10; i++) {
-                            //     document.write(part1 + part2 + counter + part3);
-                            //     counter++;
-                            // }
+                            returnTastyImages("Dessert Pizza", "8");
                         </script>
-                    </p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 body {
     font-family: Montserrat, sans-serif;
@@ -8,8 +8,8 @@ body {
 
 #header {
     background-color: #1abc9c;
-    height: 150px;
-    line-height: 150px;
+    height: 100px;
+    line-height: 100px;
 }
 
 #header a {
@@ -117,6 +117,11 @@ a:hover {
     border-radius: 50%;
 }
 
+.food-image {
+    max-width: 100%;
+    object-fit: cover;
+}
+
 h1, h2, h3, h4 {
     color: #333;
 }
@@ -127,6 +132,20 @@ p {
 
 .about {
     text-align: center;
+}
+
+.grid-container {
+	display: grid;
+	grid-column-gap: 5px;
+	grid-row-gap: 5px;
+    margin: 10px auto;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.grid-item {
+	display: inline;
+	padding: 10px;
+	background-color: #3c3c3cab;
 }
 
 #popup {
