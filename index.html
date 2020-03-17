@@ -63,7 +63,7 @@
                             var request = new XMLHttpRequest();
                             request.open("GET", url, false);
                             request.send();
-                            var response = request.responseText();
+                            var response = request.response();
                             var data = JSON.parse(response);
                             document.write(data);
 
