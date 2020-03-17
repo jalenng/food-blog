@@ -2,7 +2,9 @@
 <html>
     <head>
         <title>My Food Blog</title>
+        <meta content="width=device-width, initial-scale=0.8" name="viewport">
         <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="icon" href="https://avatars2.githubusercontent.com/u/42555186?s=460&v=4">
     </head>
     <body>
         <div id="popup">
@@ -57,15 +59,23 @@
                 <div class="post">
                     <p>
                         <script>
-                            var part1 = "We're in here ";
-                            var part2 = "for JavaScript for ";
-                            var part3 = " years. ";
-                            var counter = 0
-                            document.write(part1 + part2 + counter + part3);
-                            for (i = 0; i < 10; i++) {
-                                document.write(part1 + part2 + counter + part3);
-                                counter++;
-                            }
+                            var url = "customsearch.googleapis.com";
+                            var request = new XMLHttpRequest();
+                            request.open("GET", url, false);
+                            request.send();
+                            var response = request.responseText();
+                            var data = JSON.parse(response);
+                            document.write(data);
+
+                            // var part1 = "We're in here ";
+                            // var part2 = "for JavaScript for ";
+                            // var part3 = " years. ";
+                            // var counter = 0
+                            // document.write(part1 + part2 + counter + part3);
+                            // for (i = 0; i < 10; i++) {
+                            //     document.write(part1 + part2 + counter + part3);
+                            //     counter++;
+                            // }
                         </script>
                     </p>
                 </div>
